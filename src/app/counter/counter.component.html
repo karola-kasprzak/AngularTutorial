@@ -1,0 +1,9 @@
+<div class="my-4">
+    <button class="btn btn-primary" (click)="onButtonClick()">Display Details</button>
+    <p *ngIf="visible">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis ducimus illum dicta vitae obcaecati beatae repudiandae corporis unde quisquam harum placeat accusamus sequi, facilis aperiam inventore quas quasi possimus.</p>
+    <p>Counter: {{counter}}</p>
+    <p  *ngFor="let item of counter"
+        [ngStyle]="counter.indexOf(item)>=5 ?{'backgroundColor': 'DeepSkyBlue'} :null"
+        [ngClass]="{'white-text':counter.indexOf(item)>=5}"
+    >{{item}}</p>
+</div>

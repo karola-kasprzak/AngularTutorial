@@ -5,22 +5,25 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <input type="text" class="form-control" [(ngModel)]="userName">
   <p> Username: {{userName}}</p>
-  <button class="btn btn-dark" [disabled]="checkUserName()" (click)="onResetUserName()">Reset</button>
+  <button class="btn btn-dark" [disabled]="!userName" (click)="userName = ''">Reset</button>
   `,
   styles: ['']
 })
 export class UserComponent implements OnInit {
   userName = ""
   constructor() { }
-  onResetUserName() {
-    this.userName= ""
-  }
 
-  checkUserName() {
-    if(!this.userName) {
-      return true}
-    return false
-  }
+  //replaced with (click)="userName = ''"
+  // onResetUserName() {
+  //   this.userName= ""
+  // }
+
+  //replaced with inline [disabled]="!userName"
+  // checkUserName() {
+  //   if(!this.userName) {
+  //     return true}
+  //   return false
+  // }
   ngOnInit(): void {
   }
 
